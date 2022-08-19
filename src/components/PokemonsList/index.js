@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getPokemons } from "../services/pokemonService";
-
+import { getPokemons } from "../../services/pokemonService";
+import { ListContainer, Item } from "./styles";
 export const PokemonList = () => {
   const [listPokemons, setListPokemons] = useState([]);
 
@@ -19,13 +19,15 @@ export const PokemonList = () => {
   }, []);
 
   return (
-    <ul>
+    <ListContainer>
       {listPokemons.map((pokemon) => (
-        <li key={pokemon.id}>
-          {pokemon.name}
-          <Link to={`/pokemons/${pokemon.id}`}>Clique aqui</Link>
-        </li>
+        <Item key={pokemon.id}>
+          <span>{pokemon.name}</span>
+          <Link to={`${pokemon.id}`} title={pokemon.name}>
+            Ir ao Pokémon
+          </Link>
+        </Item>
       ))}
-    </ul>
+    </ListContainer>
   );
 };
