@@ -131,7 +131,7 @@ export const Card = styled.div`
   flex-direction: column;
   gap: 5px;
   width: 250px;
-  height: 300px;
+  height: max-content;
   padding: 5px;
   border-radius: 4px;
   background-color: ${(props) => types[props.bgColor] || "violet"};

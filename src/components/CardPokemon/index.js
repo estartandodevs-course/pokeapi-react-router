@@ -13,7 +13,7 @@ import {
   TypesTitle,
 } from "./styles";
 
-const delay = () => new Promise((resolve) => setTimeout(resolve, 5000));
+const delay = () => new Promise((resolve) => setTimeout(resolve, 2000));
 
 export const CardPokemon = () => {
   const [pokemon, setPokemon] = useState({});
